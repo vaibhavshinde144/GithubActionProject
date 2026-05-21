@@ -82,6 +82,7 @@ public class LoginTest extends BaseTest{
 	@After
 	public void tearDown() {
 			driver.quit();
+			ReportUtility.logInfo("Browser closed");
 	}
 	
 	@AfterAll
