@@ -32,13 +32,10 @@ jobs:
           restore-keys: |
             maven-${{ runner.os }}-
 
-      - name: Install Chromium
+      - name: Install Chrome Browser
         run: |
           sudo apt-get update
-          sudo apt-get install -y chromium-browser
-
-      - name: Verify Chromium installation
-        run: chromium-browser --version
+          sudo apt-get install -y chromium-browser xvfb
 
       - name: Build project
         working-directory: DevOpsProject
@@ -46,7 +43,12 @@ jobs:
 
       - name: Run TestNG tests
         working-directory: DevOpsProject
-        run: mvn test --fail-at-end
+        run: |
+          export DISPLAY=:99
+          sudo Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+          mvn test --fail-at-end
+        env:
+          HEADLESS_MODE: "true"
 
       - name: Upload TestNG Reports
         if: always()
