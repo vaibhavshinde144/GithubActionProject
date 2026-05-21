@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 		features = "src/test/resources/test.feature",
 		glue = "org.logintest.qa",
 		plugin = {"pretty",
-				"html:target/cucumber-report.html",
-				"html:target/cucumber-report.json"},
+								"html:target/cucumber-report.html",
+								"json:target/cucumber-report.json"},
 		monochrome = true
 		)
 

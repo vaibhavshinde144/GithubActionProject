@@ -1,7 +1,7 @@
 package org.base.qa;
 
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -14,9 +14,12 @@ public class BaseTest {
 	public static Properties pro;
 	
 	public BaseTest() throws IOException {
-		FileInputStream fis = new FileInputStream("D:\\Java Eclipse\\DevOpsProject\\src\\test\\resources\\application.properties");
+		InputStream in = getClass().getClassLoader().getResourceAsStream("application.properties");
+		if (in == null) {
+			throw new IOException("application.properties not found in classpath");
+		}
 		pro = new Properties();
-		pro.load(fis);
+		pro.load(in);
 	}
 	public static void initialisation () {
 		String browser = pro.getProperty("browser");
