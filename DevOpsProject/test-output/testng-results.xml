@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-05-21T08:34:29 IST" name="Default suite" finished-at="2026-05-21T08:35:32 IST" duration-ms="63641">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.cucumber.runner.Runner@3fed2870]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2026-05-21T08:34:29 IST" name="Default test" finished-at="2026-05-21T08:35:32 IST" duration-ms="63641">
+      <class name="org.cucumber.runner.Runner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:org.cucumber.runner.Runner@3fed2870]" started-at="2026-05-21T08:34:29 IST" name="setUpClass" finished-at="2026-05-21T08:34:29 IST" duration-ms="693" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@1f4f0fcc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.cucumber.runner.Runner@3fed2870]" started-at="2026-05-21T08:34:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-21T08:34:51 IST" duration-ms="21165" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User login with valid creadiantials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.cucumber.runner.Runner@3fed2870]" started-at="2026-05-21T08:34:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-21T08:35:00 IST" duration-ms="9766" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User login with invalid crediantials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:org.cucumber.runner.Runner@3fed2870]" started-at="2026-05-21T08:35:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-05-21T08:35:32 IST" duration-ms="31656" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User login with invalid crediantials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login Functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.168)
+Build info: version: '4.43.0', revision: 'dd0f534'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6f5b1aed6e89afef130a2dac88cb66eb, get {url=https://practicetestautomation.com/practice-test-login/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\Aishw\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58272}, goog:processID: 24588, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58272/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6f5b1aed6e89afef130a2dac88cb66eb]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.168)
+Build info: version: '4.43.0', revision: 'dd0f534'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6f5b1aed6e89afef130a2dac88cb66eb, get {url=https://practicetestautomation.com/practice-test-login/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.168, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: C:\Users\Aishw\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58272}, goog:processID: 24588, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58272/devtoo..., se:cdpVersion: 148.0.7778.168, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6f5b1aed6e89afef130a2dac88cb66eb
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:169)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:142)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:223)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:374)
+at org.logintest.qa.LoginTest.the_user_is_on_demo_web_shop_login_page(LoginTest.java:41)
+at ✽.the user is on Demo Web Shop login page(file:///D:/Java%20Eclipse/DevOpsProject/src/test/resources/test.feature:12)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:org.cucumber.runner.Runner@3fed2870]" started-at="2026-05-21T08:35:32 IST" name="tearDownClass" finished-at="2026-05-21T08:35:32 IST" duration-ms="302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- org.cucumber.runner.Runner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
