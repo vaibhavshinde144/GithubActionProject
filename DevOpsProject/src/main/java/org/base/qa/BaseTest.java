@@ -6,12 +6,14 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class BaseTest {
 	public static WebDriver driver;
 	public static Properties pro;
+	public static ChromeOptions options;
 	
 	public BaseTest() throws IOException {
 		InputStream in = getClass().getClassLoader().getResourceAsStream("application.properties");
@@ -24,6 +26,12 @@ public class BaseTest {
 	public static void initialisation () {
 		String browser = pro.getProperty("browser");
 		if(browser.equals("chrome")) {
+			options = new ChromeOptions();
+			options.addArguments("--headless=new");
+			options.addArguments("--no-sandbox");
+			options.addArguments("--disable-dev-shm-usage");
+			options.addArguments("--disable-gpu");
+			options.addArguments("--window-size=1920,1080");
 			driver = new ChromeDriver();
 		}
 		else if (browser.equals("firfox")) {
