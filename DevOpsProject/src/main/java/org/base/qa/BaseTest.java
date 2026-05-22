@@ -2,8 +2,10 @@ package org.base.qa;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,10 +30,21 @@ public class BaseTest {
 		if(browser.equals("chrome")) {
 			options = new ChromeOptions();
 			options.addArguments("--headless=new");
-			options.addArguments("--no-sandbox");
-			options.addArguments("--disable-dev-shm-usage");
-			options.addArguments("--disable-gpu");
-			options.addArguments("--window-size=1920,1080");
+	        options.addArguments("--window-size=1920,1080");
+
+	        options.addArguments("--disable-dev-shm-usage");
+	        options.addArguments("--no-sandbox");
+	        options.addArguments("--disable-gpu");
+
+	        options.addArguments("--remote-allow-origins=*");
+
+	        driver = new ChromeDriver(options);
+
+	        driver.manage().timeouts()
+	                .implicitlyWait(Duration.ofSeconds(10));
+
+	        driver.manage().window()
+	                .setSize(new Dimension(1920,1080));
 			driver = new ChromeDriver();
 		}
 		else if (browser.equals("firfox")) {
@@ -43,7 +56,7 @@ public class BaseTest {
 		else {
 			System.out.println("Browser not found");
 		}
-		driver.manage().window().maximize();
+		
 		driver.manage().deleteAllCookies();
 		}
 }
